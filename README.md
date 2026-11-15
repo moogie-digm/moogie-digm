@@ -4,6 +4,8 @@ Fan of Shining Force Central; positive nod to the Goddess of All Things Shining 
 
 Links and descriptions to come later.
 
+Question? Try the discussions tab.
+
 <!--
 **moogie-digm/moogie-digm** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
