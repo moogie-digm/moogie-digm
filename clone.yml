@@ -1,0 +1,36 @@
+name: Clone Upstream to New Branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      new_branch_name:
+        description: 'Name of the new branch to create'
+        required: true
+        default: 'upstream'
+      repo_name:
+        description: 'Name of the repo'
+        required: true
+        default: 'moogie-digm/moogie-digm'
+      repo_branch:
+        description: 'Name of the repo branch'
+        required: true
+        default: 'master'
+
+jobs:
+  clone-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo with PAT
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
+
+      - name: Fetch upstream master and push to new branch
+        env:
+          NEW_BRANCH: ${{ github.event.inputs.new_branch_name }}
+          OLD_REPO: ${{ github.event.inputs.repo_name }}
+          OLD_BRANCH: ${{ github.event.inputs.repo_branch }}
+        run: |
+          git remote add upstream https://github.com/${OLD_REPO}
+          git fetch upstream ${OLD_BRANCH}
+          git push origin "upstream/${OLD_BRANCH}:refs/heads/${NEW_BRANCH}"
