@@ -1,8 +1,7 @@
-## Hi there 👋
-
-Fan of Shining Force Central; positive nod to the Goddess of All Things Shining admin over there (real paradigm maker - Moogie)
+Fan of Shining Force Central
+- positive nod to the Goddess of All Things Shining admin (real paradigm maker - Moogie)
 
 ---
 
 Projects:
-- [Luajit HLE framework]
+- [Luajit HLE framework](https://github.com/moogie-digm/luajit-hle)
